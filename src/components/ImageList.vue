@@ -2,6 +2,7 @@
   <article class="container">
     <section class="container__content">
       <input type="text" name="q" id="q" placeholder="2022.01.20 12:15" v-model="search" @input="searchImages">
+      <span class="not-found" v-if="searchedImages.length == 0">Nie znaleziono rejestrów</span>
       <section class="container__content__list">
         <div class="container__content__list__single" v-for="image in searchedImages.slice(0, limit)" v-bind:key="image.pathShort" @click="showImage">
           <span>{{ image.datetime }}</span>
@@ -100,6 +101,12 @@ export default {
 
 .container__content input:focus {
   border-bottom: 1px solid #FFF;
+}
+
+.container__content .not-found {
+  display: block;
+  font-weight: lighter;
+  font-size: 1.3rem;
 }
 
 .container__content__list {
