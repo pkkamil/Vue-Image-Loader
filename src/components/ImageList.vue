@@ -155,4 +155,25 @@ export default {
   width: 100%;
   height: 100%;
 }
+
+@media only screen and (max-width: 1400px) {
+  .container__content__list__single {
+    width: 330px;
+    height: 225px;
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  .container__content__list__single {
+    width: 100%;
+    height: 100%;
+  }
+
+  .preview {
+    position: relative;
+    left: 0;
+    transform: none;
+    z-index: 1;
+  }
+}
 </style>
